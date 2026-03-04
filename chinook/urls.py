@@ -17,11 +17,12 @@ Including another URLconf
 from typing import Union
 
 from django.contrib import admin
-from django.urls import URLResolver, path, URLPattern
+from django.urls import URLResolver, include, path, URLPattern
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns: list[Union[URLPattern, URLResolver]] = [
     path('admin/', admin.site.urls),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+      path("api/music/", include("music.urls")),
 ]
