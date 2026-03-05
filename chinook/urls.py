@@ -25,4 +25,6 @@ urlpatterns: list[Union[URLPattern, URLResolver]] = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
       path("api/music/", include("music.urls")),
+        path("api/staff/", include("staff.urls")),
+      path("api/sales/", include("sales.urls")),
 ]
