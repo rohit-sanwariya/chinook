@@ -1,0 +1,30 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 74DE-FF1E
+D:.
++---.idea
+¦   +---inspectionProfiles
++---.vscode
++---core-api
+¦   +---chinook
+¦   ¦   +---__pycache__
+¦   +---common
+¦   ¦   +---migrations
+¦   ¦   ¦   +---__pycache__
+¦   ¦   +---__pycache__
+¦   +---music
+¦   ¦   +---migrations
+¦   ¦   ¦   +---__pycache__
+¦   ¦   +---__pycache__
+¦   +---reports
+¦   ¦   +---migrations
+¦   ¦   ¦   +---__pycache__
+¦   ¦   +---__pycache__
+¦   +---sales
+¦   ¦   +---migrations
+¦   ¦   ¦   +---__pycache__
+¦   ¦   +---__pycache__
+¦   +---staff
+¦       +---migrations
+¦       ¦   +---__pycache__
+¦       +---__pycache__
++---db

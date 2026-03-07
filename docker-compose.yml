@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:15
+    container_name: chinook-db
+    restart: always
+    environment:
+      POSTGRES_DB: chinook
+      POSTGRES_USER: chinook
+      POSTGRES_PASSWORD: chinook
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/chinook_dump.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
+
+  core-api:
+    build: ./core-api
+    container_name: chinook-core-api
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./core-api:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_NAME: chinook
+      DB_USER: chinook
+      DB_PASSWORD: chinook
+      DB_HOST: db
+      DB_PORT: 5432
+
+volumes:
+  postgres_data:

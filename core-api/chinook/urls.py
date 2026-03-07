@@ -27,4 +27,5 @@ urlpatterns: list[Union[URLPattern, URLResolver]] = [
       path("api/music/", include("music.urls")),
         path("api/staff/", include("staff.urls")),
       path("api/sales/", include("sales.urls")),
+      path("api/reports/", include("reports.urls")),
 ]
